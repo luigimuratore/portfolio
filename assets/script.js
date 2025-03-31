@@ -8,7 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initAnimations();
     initScrollObserver();
+    initDynamicBackground(); 
+    initProjectCards();
+
 });
+
+function initProjectCards() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.querySelector('.project-overlay').style.opacity = '1';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.querySelector('.project-overlay').style.opacity = '0';
+        });
+    });
+}
 
 // Mobile Navigation Toggle
 function initNavigation() {
@@ -299,6 +316,42 @@ function initScrollObserver() {
     });
 }
 
+// Create stars and floating circles for dynamic background
+function createStars() {
+    const stars = document.createElement('div');
+    stars.classList.add('stars');
+    document.body.appendChild(stars);
+    
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        stars.appendChild(star);
+    }
+}
+
+// Create floating circles
+function createFloatingCircles() {
+    for (let i = 0; i < 3; i++) {
+        const circle = document.createElement('div');
+        circle.classList.add('floating-circle');
+        circle.style.width = `${100 + Math.random() * 200}px`;
+        circle.style.height = circle.style.width;
+        circle.style.top = `${Math.random() * 100}%`;
+        circle.style.left = `${Math.random() * 100}%`;
+        circle.style.animationDelay = `${Math.random() * 5}s`;
+        document.body.appendChild(circle);
+    }
+}
+
+// Initialize dynamic background
+function initDynamicBackground() {
+    createStars();
+    createFloatingCircles();
+}
+
 // Add CSS for animations
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
@@ -403,6 +456,20 @@ styleSheet.textContent = `
             display: block;
             z-index: 2000;
         }
+    }
+    
+    @keyframes twinkle {
+        0% { opacity: 0.2; }
+        50% { opacity: 1; }
+        100% { opacity: 0.2; }
+    }
+    
+    @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(50px, 25px) rotate(90deg); }
+        50% { transform: translate(0, 50px) rotate(180deg); }
+        75% { transform: translate(-50px, 25px) rotate(270deg); }
+        100% { transform: translate(0, 0) rotate(360deg); }
     }
 `;
 document.head.appendChild(styleSheet);
