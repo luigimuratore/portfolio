@@ -660,6 +660,189 @@ section {
 }
 
 
+/* Section titles styling */
+.section-subtitle {
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Capabilities Section */
+#capabilities {
+    background-color: var(--background-color);
+    padding: 6rem 0;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.capability-card {
+    background-color: rgba(39, 38, 64, 0.5);
+    border-radius: 10px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    opacity: 0.3;
+    transform: translate(30%, -30%);
+}
+
+.capability-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 99, 71, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.capability-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.capability-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.capability-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.capability-highlight {
+    color: var(--primary-color);
+    font-style: italic;
+    margin-top: 1.5rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--background-color);
+    padding: 6rem 0;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background-color: rgba(39, 38, 64, 0.5);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 99, 71, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* Header icons (linkedin/youtube/etc) */
+.header-social {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto 0 2rem;
+}
+
+.header-social a {
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+    .header-social {
+        display: none;
+    }
+}
+
+
 
 
 /* Media queries for responsiveness */

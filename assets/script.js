@@ -10,8 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollObserver();
     initDynamicBackground(); 
     initProjectCards();
+    initCapabilitiesAnimation();
 
 });
+
+function initCapabilitiesAnimation() {
+    const capabilityCards = document.querySelectorAll('.capability-card');
+    const contactCards = document.querySelectorAll('.contact-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    capabilityCards.forEach(card => {
+        observer.observe(card);
+    });
+    
+    contactCards.forEach(card => {
+        observer.observe(card);
+    });
+}
+
 
 function initProjectCards() {
     const projectCards = document.querySelectorAll('.project-card');
