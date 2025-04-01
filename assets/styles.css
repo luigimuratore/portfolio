@@ -462,7 +462,24 @@ section {
 
 
 
-/* Existing styles remain the same */
+.project-link {
+    font-size: 2rem; /* Increase the font size */
+    padding: 15px 25px; /* Add padding for a larger clickable area */
+    display: inline-flex; /* Ensure proper alignment */
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--primary-color); /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: var(--card-bg); /* Optional: Add a background color */
+    color: var(--primary-color); /* Text color */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add hover effects */
+}
+
+.project-link:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: var(--primary-color); /* Change background color on hover */
+    color: var(--light-text); /* Change text color on hover */
+}
 
 /* Project Section Styles */
 .projects-grid {
@@ -492,6 +509,21 @@ section {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+}
+
+/* Target images with specific alt attributes */
+img[alt="task1"] {
+    max-width: 60%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the images if needed */
+}
+
+img[alt="task2"] {
+    max-width: 60%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the images if needed */
 }
 
 .project-overlay {
@@ -850,11 +882,13 @@ section {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 1200px;
 }
 
 .about-column {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 .about-image-column {
@@ -869,6 +903,50 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+#technical-skills {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Skill items with reduced size */
+.skills-container {
+    max-width: 80%; /* Make the container smaller */
+    margin: 0 auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns instead of 3 */
+    gap: 1rem; /* Reduce gap between items */
+}
+
+.skill-item {
+    background-color: var(--card-bg);
+    padding: 0.8rem;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 99, 71, 0.3);
+    font-size: 0.7rem;
+    display: flex; /* Add display flex */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    margin-bottom: 0; /* Remove bottom margin since we're using gap */
+}
+
+.email {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
 
 .about-text-column {
     justify-content: center;
@@ -994,4 +1072,58 @@ section {
     .nav-active {
         transform: translateY(0);
     }
+}
+
+
+
+/* Footer styles */
+.contact-section {
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-links-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+.footer-bottom {
+    background-color: var(--section-bg);
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1rem;
+    margin-top: 5rem;
 }
