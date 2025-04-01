@@ -13,6 +13,9 @@
     --transition: all 0.3s ease;
     --neon-color: #ff6347;
     --neon-glow: 0 0 10px #ff6347, 0 0 20px rgba(255, 99, 71, 0.7);
+    --font-primary: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
 }
 
 .about-image {
@@ -31,7 +34,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--background-color);
@@ -84,12 +87,21 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+
+p {
+    font-family: var(--font-heading);
+    font-weight: 200;
+    margin-bottom: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
 
 .gradient-text {
     background: linear-gradient(45deg, var(--primary-color), #ff9d7d);
