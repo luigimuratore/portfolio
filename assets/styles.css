@@ -1200,7 +1200,7 @@ img[alt="task2"] {
 
 .footer-bottom {
     background-color: var(--section-bg);
-    padding: 0.4rem 0.5rem;
+    padding: 1rem 10rem;
     text-align: center;
     color: var(--light-text);
     font-size: 1rem;
