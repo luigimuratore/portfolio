@@ -178,7 +178,8 @@ function initProjectFilters() {
                     project.style.transform = 'scale(0.8)';
                     
                     setTimeout(() => {
-                        if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                        const categories = project.getAttribute('data-category').split(' ');
+                        if (filter === 'all' || categories.includes(filter)) {
                             project.style.display = 'block';
                             setTimeout(() => {
                                 project.style.opacity = '1';
