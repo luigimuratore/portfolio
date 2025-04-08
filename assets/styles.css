@@ -31,6 +31,8 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 body {
@@ -251,6 +253,9 @@ ul {
 }
 
 section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh; /* Ensures each section takes at least full viewport height */
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
@@ -342,6 +347,7 @@ section {
 
 /* ===== HERO SECTION ===== */
 .hero-section {
+    scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -379,6 +385,7 @@ section {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    font-size: 0.9rem;
     position: relative;
 }
 
@@ -560,6 +567,26 @@ section {
     color: var(--light-text); /* Change text color on hover */
 }
 
+/* Projects Section Styles */
+.projects-section {
+    padding: 5rem 10%; /* Increase horizontal padding */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto; /* Center the grid */
+}
+
+@media screen and (max-width: 768px) {
+    .projects-section {
+        padding: 5rem 5%; /* Slightly less padding on mobile */
+    }
+}
+
 /* Project Section Styles */
 .projects-grid {
     display: grid;
@@ -736,7 +763,7 @@ img[alt="task2"] {
     left: 50%;
 }
 
-.timeline li:nth-child(even)::after {
+.timeline li:nth-child(even::after) {
     left: -16px;
 }
 
@@ -1205,4 +1232,9 @@ img[alt="task2"] {
     color: var(--light-text);
     font-size: 1rem;
     margin-top: 5rem;
+}
+
+/* Optional: Add smooth transition when scrolling */
+.smooth-scroll {
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
